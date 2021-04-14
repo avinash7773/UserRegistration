@@ -8,6 +8,7 @@ public class Utility {
 	String last_name;
 	String email;
 	String mo_number;
+	String password;
 	
 	//Verify firstName ;
 	public void firstnameVerification(String first_name) {
@@ -35,7 +36,7 @@ public class Utility {
 	
 	//verify Email
 	public void emailVerify(String email) {
-		Pattern pattern_email = Pattern.compile("[A-Za-z0-9]{1,}[.][A-Za-z0-9]{1,}@[A-Z,a-z]{1,}[.]com[.]in");
+		Pattern pattern_email = Pattern.compile("[A-Za-z0-9]{1,}@[A-Z,a-z]{1,}[.]com");
 		this.email = email;
 		Matcher email_matcher = pattern_email.matcher(email);
 		
@@ -54,6 +55,17 @@ public class Utility {
 			System.out.println("valid Mobile Number");
 		else
 			System.out.println("Invalid Mobile Number");
+	}
+	
+	public void passwordVerify(String password) {
+		Pattern pattern_password = Pattern.compile("[A-Z,a-z,0-9]{8,}");
+		this.password = password;
+		Matcher password_matcher = pattern_password.matcher(password);
+		
+		if(password_matcher.find() &&  password_matcher.group().equals(password)) 
+			System.out.println("valid password");
+		else
+			System.out.println("Invalid password");
 		
 	}
 }

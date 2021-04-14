@@ -25,5 +25,10 @@ public class Main {
 		Scanner sc4 = new Scanner(System.in);
 		String mo_number = sc4.next();
 		nameObj.mobileFormate(mo_number);
+		
+		System.out.println("Enter password=");
+		Scanner sc5 = new Scanner(System.in);
+		String password = sc5.next();
+		nameObj.passwordVerify(password);
 	}
 }
