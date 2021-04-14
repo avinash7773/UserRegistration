@@ -16,5 +16,11 @@ public class Main {
 		String lastName = sc1.next();
 		nameObj.firstnameVerification(lastName);
 		
+		System.out.println("Enter email=");
+		Scanner sc3 = new Scanner(System.in);
+		String email = sc3.next();
+		nameObj.emailVerify(email);
+
+		
 	}
 }

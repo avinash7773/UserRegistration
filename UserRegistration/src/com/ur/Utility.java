@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class Utility {
 	String first_name;
 	String last_name;
+	String email;
 	
 	//Verify firstName ;
 	public void firstnameVerification(String first_name) {
@@ -29,6 +30,18 @@ public class Utility {
 			System.out.println("valid name");
 		else
 			System.out.println("Invalid name");
+	}
+	
+	//verify Email
+	public void emailVerify(String email) {
+		Pattern pattern_email = Pattern.compile("[A-Za-z0-9]{1,}[.][A-Za-z0-9]{1,}@[A-Z,a-z]{1,}[.]com[.]in");
+		this.email = email;
+		Matcher email_matcher = pattern_email.matcher(email);
+		
+		if(email_matcher.find() &&  email_matcher.group().equals(email)) 
+			System.out.println("valid Email");
+		else
+			System.out.println("Invalid Email");
 	}
 }
 
