@@ -57,8 +57,9 @@ public class Utility {
 			System.out.println("Invalid Mobile Number");
 	}
 	
+	//check password has at one upperCase
 	public void passwordVerify(String password) {
-		Pattern pattern_password = Pattern.compile("[A-Z,a-z,0-9]{8,}");
+		Pattern pattern_password = Pattern.compile("^(?=.{8,}$)([a-z]*)(?=.*?[A-Z])([0-9]*).*$");
 		this.password = password;
 		Matcher password_matcher = pattern_password.matcher(password);
 		
