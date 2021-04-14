@@ -11,5 +11,10 @@ public class Main {
 		String firstName = sc.next();
 		nameObj.firstnameVerification(firstName);
 		
+		System.out.println("Enter last name=");
+		Scanner sc1 = new Scanner(System.in);
+		String lastName = sc1.next();
+		nameObj.firstnameVerification(lastName);
+		
 	}
 }
