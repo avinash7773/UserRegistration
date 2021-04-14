@@ -7,6 +7,7 @@ public class Utility {
 	String first_name;
 	String last_name;
 	String email;
+	String mo_number;
 	
 	//Verify firstName ;
 	public void firstnameVerification(String first_name) {
@@ -42,6 +43,18 @@ public class Utility {
 			System.out.println("valid Email");
 		else
 			System.out.println("Invalid Email");
+	}
+	
+	public void mobileFormate(String mo_number) {
+		Pattern pattern_mo_number = Pattern.compile("(0|91)?[7-9][0-9]{9}");
+		this.mo_number = mo_number;
+		Matcher mo_number_matcher = pattern_mo_number.matcher(mo_number);
+		
+		if(mo_number_matcher.find() &&  mo_number_matcher.group().equals(mo_number)) 
+			System.out.println("valid Mobile Number");
+		else
+			System.out.println("Invalid Mobile Number");
+		
 	}
 }
 
